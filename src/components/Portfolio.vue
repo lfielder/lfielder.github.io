@@ -21,7 +21,7 @@
     <h3>Human Centered & Service Design</h3>
     <div v-for="post in serviceDesign" :key="post.id">
       <div class="col-xs-12 col-lg-6 case_study">
-        <a v-bind:href="'#/portfolio' + post.link">
+        <!-- <a v-bind:href="'#/portfolio' + post.link"> -->
           <div class="col-xs-12 col-md-3">
             <img v-bind:src="post.image" class="case_image">
           </div>
@@ -31,7 +31,7 @@
               <p>{{ post.excerpt }}</p>
             </div>
           </div>
-        </a>
+        <!-- </a> -->
       </div>
     </div>
   </div>
@@ -76,23 +76,27 @@
         serviceDesign: [
           { id: 1,
             title: 'Service Blueprint',
-            excerpt: "",
-            image: require('../assets/origin_rackspace/title_image.png')
+            excerpt: "I have found service blueprints to be an effective way to map not only a customer experience, but also the internal processes and systems that impact that experience.",
+            image: require('../assets/service_design/service_blueprint_title.png'),
+            link: "/service_blueprint"
           },
           { id: 2,
             title: 'Customer Experience Index',
-            excerpt: "",
-            image: require('../assets/origin_rackspace/title_image.png')
+            excerpt: "Customer experience indexes are great for measuing an existing experience and isolating specific moments that negatively or positively impact a specific task.",
+            image: require('../assets/service_design/cei_title.png'),
+            link: "/customer_experience_index"
           },
           { id: 3,
             title: 'Heuristic Anlysis',
-            excerpt: "",
-            image: require('../assets/origin_rackspace/title_image.png')
+            excerpt: "Heuristic analysis can be done quickly and are a great starting point to impact an experience.",
+            image: require('../assets/service_design/heuristic_analysis_title.png'),
+            link: "/heuristic_analysis"
           },
           { id: 4,
             title: 'Experience Story Map',
-            excerpt: "",
-            image: require('../assets/origin_rackspace/title_image.png')
+            excerpt: "Story mapping is effective for understanding how users stories fit into the broader user experience.",
+            image: require('../assets/service_design/experience_story_map_title.png'),
+            link: "/experience_story_map"
           }
         ]
       }

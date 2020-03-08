@@ -12,6 +12,11 @@ import globalSearch from '../case_studies/globalSearch'
 import originPlatform from '../case_studies/originPlatform'
 import selfService from '../case_studies/selfService'
 
+import serviceBlueprint from '../service_design/serviceBlueprint'
+import heuristicAnalysis from '../service_design/heuristicAnalysis'
+import CEI from '../service_design/CEI'
+import experienceStoryMap from '../service_design/experienceStoryMap'
+
 
 Vue.use(Router)
 
@@ -63,6 +68,26 @@ export default new Router({
       path:'/portfolio/self_service',
       name:'selfService',
       component: selfService
+    },
+    {
+      path:'/portfolio/service_blueprint',
+      name:'serviceBlueprint',
+      component: serviceBlueprint
+    },
+    {
+      path:'/portfolio/heuristic_analysis',
+      name:'heuristicAnalysis',
+      component: heuristicAnalysis
+    },
+    {
+      path:'/portfolio/customer_experience_index',
+      name:'CEI',
+      component: CEI
+    },
+    {
+      path:'/portfolio/experience_story_map',
+      name:'experienceStoryMap',
+      component: experienceStoryMap
     }
     ]
 })
