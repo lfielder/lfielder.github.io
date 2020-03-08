@@ -1,0 +1,96 @@
+@import "variables";
+@import "grid";
+@import "nav";
+
+html {
+  background: $background-primary;
+  color: $font-primary;
+  font-size: 18px;
+  	h1 {
+	font-weight: 200;
+	}
+	h4 {
+		font-size: 22px;
+		margin: 8px 0 0px 0px;
+		font-weight: 400;
+	}
+	h5 {
+	 margin: 6px;
+	}
+	ul {
+	margin-top: 6px;
+	}
+	p {
+		margin-top: 4px;
+	}
+}
+#app {
+	font-family: 'Barlow', sans-serif;
+}
+body {
+	margin: 0;
+}
+.pull-right {
+	float: right;
+}
+.case_study {
+	margin-bottom: 24px;
+	a {
+		color: $font-primary;
+	}
+	a:hover {
+		color: lighten($font-primary, 25%);
+	}
+}
+img {width: 100%}
+.case_description {
+	padding: 0 1em;
+}
+.case_image {
+	box-shadow: 0 0 4px lighten($background-primary, 25%);
+}
+a {
+  color: $link-primary;
+  text-decoration: none;
+}
+a:hover {
+  color: darken($link-primary, 25%);
+  text-decoration: none;
+}
+.home_page_text {
+	font-size: 18px;
+}
+.design_quote {
+	font-style: italic;
+	text-align: center;
+	margin-top: 44px;
+	span {
+	display: block;
+	}
+}
+.headshot {
+}
+.use_case {
+	.breadcrumbs {
+		margin-bottom: 24px;
+		font-size: 16px;
+		span {
+		}
+	}
+	h1 {
+	font-weight: 200;
+	}
+	h3 {
+		margin-top: 24px;
+	}
+	h5 {
+	 margin: 6px;
+	}
+	img {
+		width: 50%;
+	}
+	img.ss-img {
+		width: 27%;
+		margin: 20px;
+	}
+}
