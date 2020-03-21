@@ -1,8 +1,10 @@
 <template>
   <div class="container use_case">
-    <!-- <div class="breadcrumbs col-sm-12">
-      <router-link to="/portfolio">Portfolio</router-link><span> / Consolidated Ticketing Experience</span>
-    </div> -->
+    <ul class="breadcrumbs">
+      <li><router-link to="/work">Work</router-link></li>
+      <li>/</li>
+      <li>Consolidated Ticketing Experience</li>
+    </ul>
     <h1>Consolidated Ticketing Experience</h1>
     <p>
   This is a long-term (3-5 year) project with the goal to revolutionize the way we provide support to our customers. We want to become more consistent and bring together the end-to-end experiences for all customers. </p><p>I was responsible for making interaction and usability decisions for the MVP as well as subsequent release phases that would introduce the UI to additional users and have unique requirements. I worked very closely with Dev to ensure all legacy features are accounted for, but also to ensure that any adjustments we could make to these features would add value to customers. 

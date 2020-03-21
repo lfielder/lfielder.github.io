@@ -10,10 +10,7 @@
           <router-link to="/" exact>Home</router-link>
         </li>
         <li>
-          <router-link to="/resume">Resume</router-link>
-        </li>
-        <li>
-          <router-link to="/portfolio">Portfolio</router-link>
+          <router-link to="/work">Work</router-link>
         </li>
         <li>
           <router-link to="/contact">Contact</router-link>

@@ -1,7 +1,7 @@
 $color-primary: #102E45;
-$background-primary: #102E45;
-$font-primary: #eaeaea;
-$link-primary: #06FF91;
+$background-primary: #FFFFFF;
+$font-primary: #102E45;
+$link-primary: lighten($font-primary, 25%);
 
 // Grid Variables
 $grid-columns: 12;

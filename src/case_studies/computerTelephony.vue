@@ -1,5 +1,10 @@
 <template>
   <div class="container use_case">
+    <ul class="breadcrumbs">
+      <li><router-link to="/work">Work</router-link></li>
+      <li>/</li>
+      <li>Computer Telephony Foundation</li>
+    </ul>
     <h1>Computer Telephony Foundation</h1>
     <p>
       Across Rackspace there were many different teams and different ways that employees logged when customer's called in. The goal of this project was to leverage the new global search and add on to the workflow to log the reason for the call and who the call was transferred to.

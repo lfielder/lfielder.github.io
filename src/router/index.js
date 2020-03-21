@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Portfolio from '../components/Portfolio'
+import Work from '../components/Work'
 
 import Home from '../components/Home'
 import Resume from '../components/Resume'
@@ -12,6 +12,10 @@ import globalSearch from '../case_studies/globalSearch'
 import originPlatform from '../case_studies/originPlatform'
 import selfService from '../case_studies/selfService'
 
+import serviceBlueprint from '../service_design/service_blueprint'
+import CEI from '../service_design/cei'
+import heuristicAnalysis from '../service_design/heuristic_analysis'
+import experienceMap from '../service_design/experience_story_map'
 
 Vue.use(Router)
 
@@ -25,9 +29,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/portfolio',
-      name: 'Portfolio',
-      component: Portfolio
+      path: '/work',
+      name: 'work',
+      component: Work
     },
     {
       path:'/resume',
@@ -40,29 +44,49 @@ export default new Router({
       component: Contact
     },
     {
-      path:'/portfolio/consolidated_ticketing',
+      path:'/work/consolidated_ticketing',
       name:'ctui',
       component: CTUI
     },
     {
-      path:'/portfolio/computer_telephony',
+      path:'/work/computer_telephony',
       name:'computerTelephony',
       component: computerTelephony
     },
     {
-      path:'/portfolio/global_search',
+      path:'/work/global_search',
       name:'globalSearch',
       component: globalSearch
     },
     {
-      path:'/portfolio/origin_platform',
+      path:'/work/origin_platform',
       name:'originPlatform',
       component: originPlatform
     },
     {
-      path:'/portfolio/self_service',
+      path:'/work/self_service',
       name:'selfService',
       component: selfService
+    },
+    {
+      path:'/work/service_blueprint',
+      name:'Service Blueprint',
+      component: serviceBlueprint
+    },
+    {
+      path:'/work/cei',
+      name:'Customer Experience Index',
+      component: CEI
+    },
+    {
+      path:'/work/heuristic_analysis',
+      name:'Heuristic Analysis',
+      component: heuristicAnalysis
+    },
+    {
+      path:'/work/experience_story_map',
+      name:'Experience Story Map',
+      component: experienceMap
     }
     ]
 })
