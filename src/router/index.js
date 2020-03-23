@@ -88,5 +88,12 @@ export default new Router({
       name:'Experience Story Map',
       component: experienceMap
     }
-    ]
+    ],
+    scrollBehavior (to, from, savedPosition) {
+      if (savedPosition) {
+        return { x: 0, y: 0 }
+      } else {
+        return { x: 0, y: 0 }
+      }
+    }
 })

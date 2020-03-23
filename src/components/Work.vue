@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div  class="col-xs-12">
+    <div  class="col-sm-12">
       <h2 class="section_heading">Human Centered & Service Design Exampes</h2>
       <div v-for="post in serviceDesign" :key="post.id">
-        <div class="col-xs-12 col-lg-6 case_study">
+        <div class="col-sm-12 col-lg-6 case_study">
           <a v-bind:href="'#/work' + post.link">
-            <div class="col-xs-12 col-md-3">
+            <div class="col-sm-3 col-md-3">
               <img v-bind:src="post.image" class="case_image">
             </div>
-            <div class="col-xs-12 col-md-9">
+            <div class="col-sm-9 col-md-9">
               <div class="case_description">
                 <h3 class="article-heading">{{post.title}}</h3>
                 <p>{{ post.excerpt }}</p>
@@ -19,12 +19,12 @@
       </div>
       <h2 class="section_heading">UX Design Use Cases</h2>
       <div v-for="post in caseStudies" :key="post.id">
-        <div class="col-xs-12 col-lg-6 case_study">
+        <div class="col-sm-12 col-lg-6 case_study">
           <a v-bind:href="'#/work' + post.link">
-            <div class="col-xs-12 col-md-3">
+            <div class="col-sm-3">
               <img v-bind:src="post.image" class="case_image">
             </div>
-            <div class="col-xs-12 col-md-9">
+            <div class="col-sm-9">
               <div class="case_description">
                 <h3 class="article-heading">{{post.title}}</h3>
                 <p>{{ post.excerpt }}</p>
