@@ -6,6 +6,13 @@ html {
   background: $background-primary;
   color: $font-primary;
   font-size: 18px;
+  a {
+	  -webkit-transition: color 1s;
+      transition: color 1s; 
+  }
+  a:hover {
+
+  }
   	h1 {
 	font-weight: 200;
 	font-size: 32px;
@@ -42,9 +49,19 @@ body {
 	margin-bottom: 24px;
 	a {
 		color: $font-primary;
+		-webkit-transition: text-shadow .5s;
+		trasition: text-shadow .5s;
+		h3 {
+			color: $link-primary;
+			-webkit-transition: color .5s;
+	     	transition: color .5s; 
+		}
 	}
 	a:hover {
-		color: lighten($font-primary, 25%);
+		text-shadow: 2px 1px 1px rgba(103,103,103,0.1);
+		img {
+		box-shadow: 2px 1px 1px rgba(103,103,103,0.1);
+		}
 	}
 }
 img {width: 100%}

@@ -4,17 +4,18 @@
 }
 .nav_title {
   h1 {
-    font-weight:500;
+    font-weight:600;
     margin-bottom: 0;
     a {
-      color: $font-primary;
+      color: $link-primary;
     }
     a:hover {
-      color: darken($font-primary, 25%); 
+      color: lighten($link-primary, 25%); 
     }
   }
   h3 {
     margin-top: 0;
+    color: $font-secondary;
   }
 }
 ul.nav {
@@ -30,16 +31,18 @@ ul.nav {
     }
   }
   a {
-    color: $font-primary;
+    color: $link-primary;
+    border-bottom: 3px solid transparent;
+    -webkit-transition: all .3s;
+    transition: all .3s;
   }
   a:hover {
-    color: darken($font-primary, 25%);
     background: darken($background-primary, 10%);
-    border-bottom: 3px solid lighten($background-primary, 10%);
+    border-bottom: 3px solid lighten($link-primary, 10%);
   }
   a.router-link-active {
     font-weight: 700;
-    color: $font-primary;
-    border-bottom: 3px solid $font-primary;
+    color: $link-primary;
+    border-bottom: 3px solid $link-primary;
   }
 }
