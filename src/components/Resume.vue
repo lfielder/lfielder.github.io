@@ -1,0 +1,125 @@
+<template>
+  <div class="container">
+    <div class="col-xs-12">
+      <h3>Summary <span class="pull-right"><a target="_blank" href="https://drive.google.com/file/d/1-BC1zQsiUZjf27viXih35fHbLur5Aw28/view?usp=sharing">Download Resume</a></span></h3>
+      <p>
+      I am a design leader with 8 years of experience both as an individual contributor and a leader. I specialize in working with cross functional groups to ensure user centered design is adhered to by all involved. I love working with multidisciplinary teams to solve complex and difficult problems in elegant and easy to use ways.
+      </p>
+
+      <h3>Work Experience</h3>
+
+      <h4>Lead UX Designer | Rackspace</h4>
+      <p><i>October 2017 - Now</i>
+      <br />
+      I am currently the Lead UX designer for our product design team. I am working on maintaining quality and standards when our team is working across the company. I oversee and provide support for our product designers as they are working through their design process.
+      </p>
+    </div>
+    <div class="col-xs-12">
+      <h5>Key Responsibilities</h5>
+    </div>
+    <div class="col-xs-12">
+      <ul>
+        <li>Mentor designers in the design process and consult with key stakeholders throughout the
+      process</li>
+        <li>Review and document projects to inform leadership of progress</li>
+        <li>Ensure design consistency and principles are carried out for all products</li>
+        <li>Hold bi-weekly sprint reviews with designers and key stakeholders</li>
+        <li>Assist with cross-collaboration between products and designers when needed</li>
+      </ul>
+    </div>
+    <h5>Accomplishments</h5>
+    <ul>
+      <li>Implemented a design sprint, review, and demo process for all product designers</li>
+      <li>Created service blueprints for our support organizations to easily see key processes and how that impacted customer experience</li>
+      <li>Evaluated the discover and buy experience using customer experience indexes and heuristic evaluations to identify areas of opportunity</li>
+      
+    </ul>
+
+    <br />
+    <h4>Senior UX Designer | Rackspace</h4>
+    <p><i>November 2015 - Octobery 2017</i>
+    <br />
+    In this role, I was responsible for overseeing specified projects that included developing internal tools and enhancing Rackspace’s support capabilities.</p> 
+
+    <h5>Key Responsibilities</h5>
+    <ul>
+      <li>Review and critique design solutions from other designers.</li>
+      <li>Ensure all designs were consistent across all projects and utilize our existing framework before going to the developer teams.</li>
+      <li>Mentor and assist junior designers to ensure their growth.</li>
+      <li>Communicate and work with developers to ensure technical feasibility of design solutions.</li>
+      <li>Create, run and analyze user research sessions that included shadowing sessions, usability tests, and user feedback sessions.</li><li>Launched the first consolidated UI that works for all of Rackspace’s customers ticketing back-ends</li>
+      <li>Created a consolidated severity and category system that will be used as Rackspace makes the move to ITIL framework</li>
+    </ul>
+
+    <h5>Accomplishments</h5>
+    <ul>
+      <li>Created a system that allowed front-line support to log customer calls. Not only did this combine multiple tools into a single interface, it gave leadership insights they never had before.</li>
+      <li>Created a single search to enable employees to easily locate information about customers and employees. This reduced the first point of contact time from five minutes down to under two on average.</li>
+      <li>Designed and tested a new interaction model based off the previous global search project. This will increase productivity of employees by providing them a single place to support customers and more context to enable more efficient and accurate support.</li>
+    </ul>
+
+    <br />
+    <h4>UX Designer II | Rackspace</h4>  
+    <p><i>June 2013 - November 2015</i><br />
+
+    My team redesigned all of our support properties and assisted with the main site redesign. Our team consisted of developers, designers and product management.</p>
+
+    <h5>Key Responsibilities</h5>
+    <ul>
+      <li>Assist with the creation of a new support brand.</li>
+      <li>Take the new brand and visual styles and work to implement them across three websites.</li>
+      <li>Communicate new designs to all stakeholders.</li>
+      <li>Use feedback from stakeholders to ensure the design was what they envisioned.</li>
+    </ul>
+
+    <h5>Accomplishments</h5>
+    <ul>
+      <li>Completely revamped the Rackspace Community site both visuals and page structure for better usability.</li>
+      <li>Designed a new ‘Support Drawer’ that went into the public facing control panel.</li>
+      <li>Designed a single search across all support documentation sites.</li>
+    </ul>
+
+    <br />
+
+
+    <h4>Technical Communication Specialist | Rackspace</h4>
+    <p><i>January 2012 - June 2013</i><br />
+
+    This job started off being involved with the change release management process, however it was then transitioned into part of a very small team that was responsible for all internal documentation and documentation systems.
+    </p>
+    <h5>Key Responsibilities</h5>
+    <ul>
+      <li>Function as a front-end developer and UX Designer due to small team structure.</li>
+      <li>Work with product managers and users to ensure that we were satisfying their needs.</li>
+      <li>Come up with unique ideas on sharing knowledge around the company and get tribal knowledge documented.</li>
+    </ul>
+
+    <h5>Accomplishments</h5>
+    <ul>
+      <li>Design and develop internal forum software to capture questions and answers that employees had when we were launching and supporting new products.</li>
+      <li>Created a centralized dashboard and page templates for product managers to provide updates to the company on features, bugs and updates.</li>
+      <li>Migrated from a legacy wiki into a more robust and modern wiki.</li>
+      <li>Was a go-to person around the company for creating and designing documentation for both internal and external consumption.</li>
+    </ul>
+
+    <br />
+    <h3>Relevant Education</h3>
+    <p>
+    University of Texas at San Antonio<br />
+    Bachelors of Business Administration - Marketing<br />
+    Graduated 2009<br />
+    </p>
+
+    <h3>Certifications</h3>
+
+    <p><b>Scrum Master Certified - Aug 2019</b><br /></p>
+
+  </div>
+</template>
+<script>
+  export default {
+    name: 'LaneResume',
+  }
+</script>
+<style>
+</style>
