@@ -8,7 +8,6 @@
       
     </div>
     <div class="col-sm-12 col-lg-5">
-      <img src="@/assets/Lane.png" class="headshot">
     </div>
   </div>
 </template>
