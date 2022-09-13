@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <!-- <div class="container"> -->
     <div  class="col-sm-12">
-      <h2 class="section_heading">Human Centered & Service Design Exampes</h2>
+      <!-- <h2 class="section_heading">Human Centered & Service Design Exampes</h2>
       <div v-for="post in serviceDesign" :key="post.id">
         <div class="col-sm-12 col-lg-6 case_study">
           <a v-bind:href="'/work' + post.link">
@@ -16,11 +16,11 @@
             </div>
           </a>
         </div>
-      </div>
+      </div> -->
       <h2 class="section_heading">UX Design Use Cases</h2>
       <div v-for="post in caseStudies" :key="post.id">
         <div class="col-sm-12 col-lg-6 case_study">
-          <a v-bind:href="'#/work' + post.link">
+          <a v-bind:href="post.link">
             <div class="col-sm-3">
               <img v-bind:src="post.image" class="case_image">
             </div>
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 <script>
   export default {
@@ -66,12 +66,18 @@
             image: require('../assets/origin_rackspace/title_image.png'),
             link: "/origin_platform"
           },
-          { id: 5, 
-            title: 'Self Service Experience', 
-            excerpt: "Ceate a more cohesive and easier to use self-service experience for Rackspace customers.", 
-            image: require('../assets/rackspace_self_service/title_image.png'),
-            link: "/self_service"
-          },
+          // { id: 5, 
+          //   title: 'Self Service Experience', 
+          //   excerpt: "Ceate a more cohesive and easier to use self-service experience for Rackspace customers.", 
+          //   image: require('../assets/rackspace_self_service/title_image.png'),
+          //   link: "/self_service"
+          // },
+          // { id: 6,
+          //   title: "Surface Transformation",
+          //   excerpt: "Create a new more consistent visual language applicable to all Rackspace Technology control surfaces.",
+          //   image: require('../assets/rackspace_self_service/title_image.png'),
+          //   link: "/surface_transformation"
+          // }
         ],
         serviceDesign: [
           { id: 1,

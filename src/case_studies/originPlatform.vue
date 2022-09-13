@@ -1,10 +1,10 @@
 <template>
   <div class="container use_case">
-    <ul class="breadcrumbs">
+    <!-- <ul class="breadcrumbs">
       <li><router-link to="/work">Work</router-link></li>
       <li>/</li>
       <li>Origin Platform</li>
-    </ul>
+    </ul> -->
     <h1>Origin Platform</h1>
     <p>
       This project was an internal idea about taking what we learned from global search and trying to incorporate it for all internal applications. We knew we would need to incorporate legacy applications that did not adhere to our new panel interaction model and we didn't want to attempt to make another tool, another place for employees to go to try to support customers.

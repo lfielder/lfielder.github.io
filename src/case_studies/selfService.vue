@@ -1,10 +1,10 @@
 <template>
   <div class="container use_case">
-    <ul class="breadcrumbs">
+    <!-- <ul class="breadcrumbs">
       <li><router-link to="/work">Work</router-link></li>
       <li>/</li>
       <li>Self Service Experience</li>
-    </ul>
+    </ul> -->
     <h1>Self Service Experience</h1>
       <p>The goal of this project was to bring the self service sites together visually and create a single header with search for all the sites. The problem being solved was that there was not a single search that would search across all of our documentation sources (API Docs, Community Posts, and How-To articles).</p>
       <p>
