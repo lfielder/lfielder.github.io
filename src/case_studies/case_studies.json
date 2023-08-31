@@ -1,0 +1,9 @@
+{
+  "caseStudies": 
+  { "id": 1, 
+    "title": "Consolidated Ticketing Experience", 
+    "excerpt" : "Combine all existing support ticket UIs into a single experience that can be evovled to support the future of Fanatical Support.", 
+    "image" : "../assets/ctui/title_image.png')",
+    "link" : "/consolidated_ticketing"
+}
+}

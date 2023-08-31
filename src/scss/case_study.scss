@@ -1,0 +1,12 @@
+@import "_variables.scss";
+.banner {
+    background: #333333;
+    h1 {
+      font-weight: 100;
+      font-size: $space-xxxl;
+      padding: 135px 0 $space-xs 0;
+    }
+    h3 {
+      font-weight: 100;
+    }
+}

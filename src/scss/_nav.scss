@@ -1,7 +1,4 @@
 @import "./_variables.scss";
-.nav {
-  display: block;
-}
 .nav_title {
   h1 {
     font-weight:600;
@@ -18,31 +15,27 @@
     color: $font-secondary;
   }
 }
-ul.nav {
-  float: right;
-  margin-right: 45px;
-  margin-top: 24px;
-  li {
-    width: auto;
-    float: left;
-    list-style-type: none;
-    a {
-    padding: 12px 16px;
-    }
-  }
+nav {
+  margin-right: $space-xxl;
+  display: block;
+  background: $nav-link-background;
+  height: $space-xxxxl;
+  width: 100%;
   a {
-    color: $link-primary;
-    border-bottom: 3px solid transparent;
+    position: relative;
+    top: $space-md;
+    padding: $space-md $space-lg;
+    color: $nav-link-primary;
     -webkit-transition: all .3s;
     transition: all .3s;
   }
   a:hover {
-    background: darken($background-primary, 10%);
-    border-bottom: 3px solid lighten($link-primary, 10%);
+    background: darken($nav-link-background, 10%);
+    color: lighten($nav-link-primary, 20%);
   }
   a.router-link-active {
     font-weight: 700;
-    color: $link-primary;
-    border-bottom: 3px solid $link-primary;
+    background: darken($nav-link-background, 5%);
+    color: $nav-link-primary;
   }
 }

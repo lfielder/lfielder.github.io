@@ -4,6 +4,8 @@ import Work from '../components/Work'
 import Home from '../components/Home'
 import Resume from '../components/Resume'
 import Contact from '../components/Contact'
+import TeamValues from '../components/TeamValues'
+import Principles from '../components/Principles'
 
 import CTUI from '../case_studies/ctui'
 import computerTelephony from '../case_studies/computerTelephony'
@@ -40,32 +42,42 @@ const routes = [
     component: Contact
   },
   {
-    path:'/consolidated_ticketing',
+    path: '/team_values',
+    name: 'TeamValues',
+    component: TeamValues
+  },
+  {
+    path: '/principles',
+    name: 'Principles',
+    component: Principles
+  },
+  {
+    path:'/work/consolidated_ticketing',
     name:'ConsoldatedTicketing',
     component: CTUI
   },
   {
-    path:'/computer_telephony',
+    path:'/work/computer_telephony',
     name:'ComputerTelephony',
     component: computerTelephony
   },
   {
-    path:'/global_search',
+    path:'/work/global_search',
     name:'GlobalSearch',
     component: globalSearch
   },
   {
-    path:'/origin_platform',
+    path:'/work/origin_platform',
     name:'OriginPlatform',
     component: originPlatform
   },
   {
-    path:'/self_service',
+    path:'/work/self_service',
     name:'selfService',
     component: selfService
   },
   {
-    path: '/surface_transformation',
+    path: '/work/surface_transformation',
     name: 'surfaceTransformation',
     component: surfaceTransformation
   },

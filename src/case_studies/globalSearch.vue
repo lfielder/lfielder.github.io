@@ -1,10 +1,5 @@
 <template>
   <div class="container use_case">
-    <ul class="breadcrumbs">
-      <li><router-link to="/work">Work</router-link></li>
-      <li>/</li>
-      <li>Global Customer Search</li>
-    </ul>
     <h1>Global Customer Search</h1>
     <p>The business was looking to integrate the phone system with our internal tools. Our team took this request and started exploritory research on the impact this would have. We quickly realized that the proposed solution was not going to provide the value leaders anticipated. </p>
 
@@ -55,15 +50,6 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'GlobalSearch',
-    data: function () {
-      return {
-        title: 'Global Search',
-        role: "Design Lead",
-      }
-    }
-  }
 </script>
 <style lang="scss">
 @import "../scss/main";

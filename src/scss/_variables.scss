@@ -1,8 +1,19 @@
-$color-primary: #474344;
-$background-primary: #fafafa;
-$font-primary: #474344;
-$link-primary: #2c4f94;
-$font-secondary: #5293cc;
+$color-primary: #E7E0C9;
+$background-primary: linear-gradient(180deg, rgba(42,27,61,1) 0%, rgba(68,49,141,1) 100%);
+// $background-primary: #2a1b3d;
+
+$font-primary: #fafafa;
+$font-secondary: #b4b4b4;
+
+$link-primary: #e5ecff;
+
+$heading-color-primary: #333333;
+$heading-color-secondary: #888888;
+
+$nav-link-primary: #e4e4e4;
+$nav-link-background: #035AA6;
+$nav-link-hover: #ffffff;
+$nav-link-hover-background: #435B66;
 
 // Grid Variables
 $grid-columns: 12;
@@ -12,3 +23,15 @@ $breakpoint-small: "only screen and (min-width: 0px)";
 $breakpoint-medium: "only screen and (min-width: 768px)";
 $breakpoint-large: "only screen and (min-width: 1008px)";
 $breakpoint-xl: "only screen and (min-width: 1300px)";
+
+
+// Spacing Variables
+$space-xxs:  .25em;
+$space-xs:   .5em;
+$space-sm:   .75em;
+$space-md:   1em;
+$space-lg:   1.25em;
+$space-xl:   1.5em;
+$space-xxl:  1.75em;
+$space-xxxl: 2.5em;
+$space-xxxxl: 3em;

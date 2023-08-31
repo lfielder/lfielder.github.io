@@ -5,36 +5,7 @@
 html {
   background: $background-primary;
   color: $font-primary;
-  font-size: 18px;
-  a {
-	  -webkit-transition: color 1s;
-      transition: color 1s; 
-  }
-//   a:hover {
-
-//   }
-  	h1 {
-	font-weight: 200;
-	font-size: 32px;
-	}
-	h2 {
-	font-weight: 200;
-	font-size: 24px;
-	}
-	h3 {
-	margin-top: 24px;
-	font-weight: 400;
-	font-size: 20px;
-	}
-	h5 {
-	 margin: 6px;
-	}
-	ul {
-	margin-top: 6px;
-	}
-	p {
-		margin-top: 4px;
-	}
+  min-height: 100vh;
 }
 #app {
 	font-family: 'Barlow', sans-serif;
@@ -46,11 +17,11 @@ body {
 	float: right;
 }
 .case_study {
-	margin-bottom: 24px;
+	margin-bottom: $space-xl;
 	a {
 		color: $font-primary;
 		-webkit-transition: text-shadow .5s;
-		trasition: text-shadow .5s;
+		transition: text-shadow .5s;
 		h3 {
 			color: $link-primary;
 			-webkit-transition: color .5s;
@@ -66,17 +37,16 @@ body {
 }
 img { width: 100% }
 .case_description {
-	padding: 0 1em;
+	padding: 0 $space-md;
 }
-.case_image {
-	box-shadow: 0 0 4px lighten($background-primary, 25%);
-}
+// .case_image {
+// 	box-shadow: 0 0 $space-xxs lighten($background-primary, 25%);
+// }
 a {
   color: $link-primary;
   text-decoration: none;
 }
 a:hover {
-  color: darken($link-primary, 25%);
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -86,7 +56,7 @@ a:hover {
 .design_quote {
 	font-style: italic;
 	text-align: center;
-	margin-top: 44px;
+	margin-top: $space-xxxl;
 	span {
 	display: block;
 	}
@@ -99,7 +69,7 @@ a:hover {
 	padding-left: 0;
 	li {
 		display: inline;
-		margin-right: 8px;
+		margin-right: $space-xs;
 		a {
 			font-weight:500;
 		}
@@ -107,32 +77,33 @@ a:hover {
 }
 .use_case {
 	.breadcrumbs {
-		margin-bottom: 24px;
-		font-size: 16px;
-		span {
-		}
+		margin-bottom: $space-xl;
+		font-size: $space-md;
 	}
 	h1 {
 	font-weight: 200;
-	font-size: 32px;
+	font-size: $space-xxxl;
 	}
 	h2 {
 	font-weight: 200;
-	font-size: 24px;
+	font-size: $space-lg;
 	}
 	h3 {
-	margin-top: 24px;
+	margin-top: $space-xl;
 	font-weight: 500;
-	font-size: 22px;
+	font-size: $space-xl;
+	}
+	.specs-name {
+		text-transform: uppercase;
 	}
 	h5 {
-	 margin: 6px;
+	 margin: $space-xs;
 	}
 	img {
 		width: 50%;
 	}
 	img.ss-img {
 		width: 27%;
-		margin: 20px;
+		margin: $space-lg;
 	}
 }
