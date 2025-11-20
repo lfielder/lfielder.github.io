@@ -1,9 +1,380 @@
-<!doctype html><html lang=""><head><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-106945914-1"></script><script>window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lane Fielder | UX Design Manager & Strategy Lead</title>
+    <meta name="description" content="Portfolio of Lane Fielder, UX Design Manager specializing in Design Leadership, Systems, and Strategy.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-      gtag('config', 'UA-106945914-1');</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TWNW7LR');</script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>Lane Fielder | Design Leader</title><script defer="defer" src="/js/chunk-vendors.12897e29.js"></script><script defer="defer" src="/js/app.2d61b652.js"></script><link href="/css/app.38fdd6f2.css" rel="stylesheet"></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWNW7LR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><noscript><strong>We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body></html>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        background: '#0f0f0f',
+                        surface: '#1a1a1a',
+                        primary: '#3b82f6',
+                        muted: '#a1a1aa',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f0f0f; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        body { background-color: #0f0f0f; color: #ffffff; }
+        
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Modal Animation */
+        .modal-enter { opacity: 0; transform: scale(0.98); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: opacity 0.3s ease, transform 0.3s ease; }
+        .modal-exit { opacity: 1; transform: scale(1); }
+        .modal-exit-active { opacity: 0; transform: scale(0.98); transition: opacity 0.3s ease, transform 0.3s ease; }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-[#0f0f0f]/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center gap-8">
+            <a href="#" onclick="closeModal()" class="text-xl font-bold tracking-tight flex items-center gap-2">
+                <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                Lane Fielder
+            </a>
+            
+            <!-- Right Aligned Desktop Menu -->
+            <div class="hidden md:flex ml-auto gap-8 text-sm font-medium text-muted">
+                <a href="#work" onclick="closeModal()" class="hover:text-white transition-colors">Case Studies</a>
+                <a href="#expertise" onclick="closeModal()" class="hover:text-white transition-colors">Expertise</a>
+                <a href="#about" onclick="closeModal()" class="hover:text-white transition-colors">About</a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-4">
+                <a href="mailto:hello@example.com" class="hidden md:block text-white px-4 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-all text-sm font-medium">Get in Touch</a>
+                <button onclick="toggleMenu()" class="md:hidden text-white p-2"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden fixed inset-0 bg-black/95 z-50 flex-col items-center justify-center space-y-8 text-xl md:hidden">
+            <button onclick="toggleMenu()" class="absolute top-6 right-6 text-white/50"><i data-lucide="x" class="w-8 h-8"></i></button>
+            <a href="#work" onclick="toggleMenu()" class="hover:text-blue-400">Case Studies</a>
+            <a href="#expertise" onclick="toggleMenu()" class="hover:text-blue-400">Expertise</a>
+            <a href="#about" onclick="toggleMenu()" class="hover:text-blue-400">About</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <div id="main-content">
+        
+        <!-- Hero -->
+        <header class="pt-40 pb-20 px-6 max-w-6xl mx-auto">
+            <div class="max-w-3xl fade-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-blue-400 mb-6">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    Open to leadership roles
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-8">
+                    Leading teams to build <br class="hidden md:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">human-centered</span> systems.
+                </h1>
+                <p class="text-xl text-muted leading-relaxed max-w-2xl mb-10">
+                    I am a technical and creative design leader bridging the gap between engineering solutions, creative talent, and business strategy. I build environments that ensure critical business metrics are hit while empowering creatives with the freedom and tools to do what they do best.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#work" class="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors">View Case Studies</a>
+                    <a href="https://www.linkedin.com/in/lanefielder/" target="_blank" class="px-6 py-3 border border-white/20 rounded-lg hover:bg-white/5 transition-colors flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn Profile</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats -->
+        <section class="px-6 max-w-6xl mx-auto mb-24 fade-up">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-6 rounded-2xl bg-surface border border-white/5">
+                    <div class="text-3xl font-bold text-white mb-1">10+</div>
+                    <div class="text-sm text-muted">Years Experience</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-surface border border-white/5">
+                    <div class="text-3xl font-bold text-white mb-1">15</div>
+                    <div class="text-sm text-muted">Designers Managed</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-surface border border-white/5">
+                    <div class="text-3xl font-bold text-white mb-1">40%</div>
+                    <div class="text-sm text-muted">Conv. Uplift (Avg)</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-surface border border-white/5">
+                    <div class="text-3xl font-bold text-white mb-1">0-1</div>
+                    <div class="text-sm text-muted">Product Launches</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDIES GRID -->
+        <section id="work" class="px-6 max-w-6xl mx-auto mb-32">
+            <div class="flex items-end justify-between mb-12 fade-up">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Selected Work</h2>
+                    <p class="text-muted">A mix of strategy, operations, and product design.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]" id="case-studies-grid">
+                <!-- JS will inject cards here -->
+            </div>
+        </section>
+
+        <!-- Expertise -->
+        <section id="expertise" class="py-24 bg-surface/30 border-y border-white/5">
+            <div class="px-6 max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                    <div class="fade-up">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">Designing for <br /><span class="text-blue-500">Business Impact</span></h2>
+                        <p class="text-muted text-lg mb-8 leading-relaxed">
+                            My approach to design management isn't just about pixels; it's about people and processes. I believe that psychological safety in teams leads to the most innovative work.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="tag px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-muted">Design Leadership</span>
+                            <span class="tag px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-muted">Design Systems</span>
+                            <span class="tag px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-muted">Strategy</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 fade-up delay-100">
+                        <div class="bg-[#0f0f0f] p-6 rounded-2xl border border-white/5"><i data-lucide="figma" class="w-8 h-8 text-white mb-4"></i><h4 class="font-bold">Design Systems</h4></div>
+                        <div class="bg-[#0f0f0f] p-6 rounded-2xl border border-white/5"><i data-lucide="trello" class="w-8 h-8 text-white mb-4"></i><h4 class="font-bold">Agile Ops</h4></div>
+                        <div class="bg-[#0f0f0f] p-6 rounded-2xl border border-white/5"><i data-lucide="bar-chart-3" class="w-8 h-8 text-white mb-4"></i><h4 class="font-bold">Product Strategy</h4></div>
+                        <div class="bg-[#0f0f0f] p-6 rounded-2xl border border-white/5"><i data-lucide="users" class="w-8 h-8 text-white mb-4"></i><h4 class="font-bold">Mentorship</h4></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="about" class="pt-20 pb-10 px-6 border-t border-white/5 text-center">
+            <div class="max-w-2xl mx-auto mb-12 fade-up">
+                <h2 class="text-3xl font-bold mb-6">Ready to scale your design impact?</h2>
+                <a href="mailto:hello@example.com" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all">Say Hello</a>
+            </div>
+            <div class="text-xs text-gray-600">&copy; 2025 Lane Fielder.</div>
+        </footer>
+    </div>
+
+    <!-- CASE STUDY OVERLAY (Hidden by default) -->
+    <div id="case-study-modal" class="fixed inset-0 z-[100] bg-[#0f0f0f] hidden overflow-y-auto">
+        <div class="max-w-4xl mx-auto px-6 py-12">
+            <button onclick="closeModal()" class="fixed top-6 right-6 z-50 p-3 bg-surface rounded-full border border-white/10 hover:bg-white/10 transition-colors group">
+                <i data-lucide="x" class="w-6 h-6 text-muted group-hover:text-white"></i>
+            </button>
+            <button onclick="closeModal()" class="mb-8 text-sm text-muted hover:text-white flex items-center gap-2">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Portfolio
+            </button>
+            
+            <div id="modal-content" class="animate-in fade-in slide-in-from-bottom-8 duration-500">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // --- DATA: UPDATED Case Studies ---
+        const caseStudies = [
+            {
+                id: 1,
+                title: "AI Ticket Guide",
+                category: "AI Ops / Workflow",
+                image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop", // Abstract structured tech
+                description: "Guiding employees to create accurate tickets using AI, reducing back-and-forth and improving data quality.",
+                fullContent: `
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">AI Ticket Guide</h1>
+                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
+                        <span>Type: <strong>Internal Tool</strong></span>
+                        <span>Focus: <strong>Workflow Efficiency</strong></span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop" class="w-full rounded-2xl mb-12 border border-white/10" />
+                    
+                    <div class="prose prose-invert prose-lg max-w-none">
+                        <h3 class="text-2xl font-bold text-white mb-4">The Problem</h3>
+                        <p class="text-muted mb-8">Employees often rely on tribal knowledge or provide inconsistent inputs when creating tickets. This leads to significant back-and-forth, delays, and poor data quality for downstream teams.</p>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-4">The Solution</h3>
+                        <p class="text-muted mb-8">The AI Ticket Guide uses real-time AI prompting to guide users through the right questions and structure. It detects missing details, recommends categorization, and ensures clarity before submission.</p>
+                        
+                        <div class="bg-surface p-8 rounded-xl border border-white/5 my-8">
+                            <h4 class="font-bold text-white mb-2">Key Impact</h4>
+                            <ul class="list-disc list-inside text-muted space-y-2">
+                                <li>Reduced back-and-forth communication</li>
+                                <li>Improved workflow efficiency for support teams</li>
+                                <li>Higher quality inputs and better data categorization</li>
+                                <li>More intuitive process for non-technical users</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                size: "large" 
+            },
+            {
+                id: 3,
+                title: "Visual Guidelines for AI",
+                category: "Design Systems / GenAI",
+                image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop", // Abstract artistic/geometric
+                description: "Transforming brand guidelines into structured prompt formats and guardrails for generative systems.",
+                fullContent: `
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Visual Guidelines Made for AI</h1>
+                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
+                        <span>Type: <strong>Design System</strong></span>
+                        <span>Focus: <strong>Brand Consistency</strong></span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" class="w-full rounded-2xl mb-12 border border-white/10" />
+                    <div class="prose prose-invert prose-lg max-w-none">
+                        <h3 class="text-2xl font-bold text-white mb-4">Overview</h3>
+                        <p class="text-muted mb-6">This project operationalizes design principles for AI. We transformed traditional brand guidelines into a set of AI-ready visual rules used across multiple generative systems.</p>
+                        
+                        <h3 class="text-2xl font-bold text-white mb-4">Approach</h3>
+                        <p class="text-muted mb-6">The system translates look, feel, tone, and visual language into structured prompt formats and reference images. It acts as a guardrail to ensure consistency across concept art, marketing visuals, and UI mockups.</p>
+
+                         <div class="bg-surface p-8 rounded-xl border border-white/5 my-8">
+                            <h4 class="font-bold text-white mb-2">Outcomes</h4>
+                            <ul class="list-disc list-inside text-muted space-y-2">
+                                <li>Generates on-brand visuals quickly and reliably</li>
+                                <li>Significantly reduces revisions</li>
+                                <li>Reinforces cohesive storytelling across automated outputs</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                size: "tall"
+            },
+            {
+                id: 2,
+                title: "AI Ticket Resolution",
+                category: "Enterprise / AI",
+                image: "https://images.unsplash.com/photo-1558494949-ef253b294816?q=80&w=2668&auto=format&fit=crop", // Abstract data flow
+                description: "Accelerating problem-solving by surfacing context and recommending secure, compliant solutions.",
+                fullContent: `
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">AI Ticket Resolution</h1>
+                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
+                        <span>Type: <strong>Operations</strong></span>
+                        <span>Focus: <strong>Automation & Compliance</strong></span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1558494949-ef253b294816?q=80&w=2668&auto=format&fit=crop" class="w-full rounded-2xl mb-12 border border-white/10" />
+                    <div class="prose prose-invert prose-lg max-w-none">
+                        <p class="text-muted mb-6">The AI Ticket Resolution tool accelerates problem-solving by giving employees immediate context, surfacing relevant historical data, and recommending secure and compliant solutions.</p>
+                        <p class="text-muted">The system understands user roles and permissions, ensuring responses adhere to security governance while reducing resolution time and improving accuracy.</p>
+                    </div>
+                `,
+                size: "normal"
+            },
+            {
+                id: 4,
+                title: "UI MCP Server",
+                category: "DevTools / Design Ops",
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop", // Abstract code/tech
+                description: "Standardizing UI component generation for AI-powered IDEs to prevent drift and maintain quality.",
+                fullContent: `
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">UI MCP Server</h1>
+                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
+                        <span>Type: <strong>Dev Tool</strong></span>
+                        <span>Focus: <strong>Design Systems</strong></span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop" class="w-full rounded-2xl mb-12 border border-white/10" />
+                    <div class="prose prose-invert prose-lg max-w-none">
+                        <p class="text-muted mb-6">A custom Model Context Protocol (MCP) server that gives AI-powered IDEs and agents a standardized way to build UI components.</p>
+                        <p class="text-muted">It ensures every AI-generated component adheres to the same design system, accessibility standards, and code structure, creating a safe, scalable foundation for AI-assisted development.</p>
+                    </div>
+                `,
+                size: "normal"
+            }
+        ];
+
+        // --- LOGIC: Render Cards ---
+        const grid = document.getElementById('case-studies-grid');
+        
+        caseStudies.forEach(study => {
+            const isLarge = study.size === 'large' ? 'md:col-span-2' : '';
+            const isTall = study.size === 'tall' ? 'md:row-span-2' : '';
+            
+            const card = document.createElement('div');
+            card.className = `group relative rounded-3xl overflow-hidden bg-surface border border-white/5 cursor-pointer fade-up ${isLarge} ${isTall}`;
+            card.onclick = () => openCaseStudy(study.id);
+            
+            card.innerHTML = `
+                <div class="absolute inset-0 bg-black/20 z-0"></div>
+                <div class="absolute inset-0 opacity-60 group-hover:scale-105 transition-transform duration-700">
+                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('${study.image}')"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 z-10 w-full bg-gradient-to-t from-black/90 to-transparent">
+                    <div class="flex gap-2 mb-3">
+                        <span class="px-3 py-1 text-xs uppercase tracking-wider font-semibold bg-blue-600 text-white rounded-full">${study.category.split('/')[0]}</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">${study.title}</h3>
+                    <p class="text-gray-300 text-sm line-clamp-3">${study.description}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        // --- MODAL LOGIC ---
+        function openCaseStudy(id) {
+            const study = caseStudies.find(s => s.id === id);
+            if (!study) return;
+
+            const modal = document.getElementById('case-study-modal');
+            const content = document.getElementById('modal-content');
+            
+            // Populate content
+            content.innerHTML = study.fullContent;
+            
+            // Show modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            
+            // Basic animation reset
+            content.classList.remove('animate-in');
+            void content.offsetWidth; // trigger reflow
+            content.classList.add('animate-in');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('case-study-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+
+        // --- ANIMATION OBSERVER ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
