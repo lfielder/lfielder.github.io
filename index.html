@@ -375,6 +375,9 @@
             
             // Populate content
             content.innerHTML = study.fullContent;
+
+            // Re-create lucide icons inside the newly injected content (for the alert-triangle icon)
+            lucide.createIcons();
             
             // Show modal
             modal.classList.remove('hidden');
