@@ -119,20 +119,31 @@
             </div>
 
             <!-- Right Side -->
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 ml-auto h-full">
                 <a href="mailto:lanefielder@gmail.com"
                     class="hidden md:block text-white px-4 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-all text-sm font-medium">Get
                     in Touch</a>
-                <button onclick="toggleMenu()" class="md:hidden text-white p-2"><i data-lucide="menu"></i></button>
+                <button onclick="toggleMenu()" class="md:hidden text-white p-2 flex items-center justify-center"><i
+                        data-lucide="menu"></i></button>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobileMenu"
-            class="hidden fixed inset-0 bg-black/95 z-50 flex-col items-center justify-center space-y-8 text-xl md:hidden">
-            <button onclick="toggleMenu()" class="absolute top-6 right-6 text-white/50"><i data-lucide="x"
-                    class="w-8 h-8"></i></button>
-            <a href="#work" onclick="toggleMenu()" class="hover:text-blue-400">Case Studies</a>
-            <a href="#expertise" onclick="toggleMenu()" class="hover:text-blue-400">Expertise</a>
+        <div id="mobile-menu-overlay"
+            class="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm hidden flex-col items-center justify-center h-screen w-screen opacity-0 transition-opacity duration-300">
+            <button onclick="toggleMenu()"
+                class="absolute top-6 right-6 p-2 text-white/50 hover:text-white transition-colors z-50">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+
+            <nav class="flex flex-col items-center gap-8 w-full px-6 text-center">
+                <a href="#work" onclick="toggleMenu()"
+                    class="text-3xl font-bold text-white hover:text-blue-400 transition-colors">Case Studies</a>
+                <a href="#expertise" onclick="toggleMenu()"
+                    class="text-3xl font-bold text-white hover:text-blue-400 transition-colors">Expertise</a>
+                <a href="mailto:lanefielder@gmail.com"
+                    class="mt-4 px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all">Get
+                    in Touch</a>
+            </nav>
         </div>
     </nav>
 
@@ -591,9 +602,27 @@
         }
 
         function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
+            const menu = document.getElementById('mobile-menu-overlay');
+            const body = document.body;
+
+            if (menu.classList.contains('hidden')) {
+                // Open menu
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+                // Small delay to allow display:flex to apply before opacity transition
+                setTimeout(() => {
+                    menu.classList.remove('opacity-0');
+                }, 10);
+                body.style.overflow = 'hidden';
+            } else {
+                // Close menu
+                menu.classList.add('opacity-0');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                    body.style.overflow = 'auto';
+                }, 300); // Match transition duration
+            }
         }
 
         // --- ANIMATION OBSERVER ---
