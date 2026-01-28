@@ -107,7 +107,7 @@
     <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 bg-[#0f0f0f]/80 backdrop-blur-md border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center gap-8">
-            <a href="#" onclick="closeModal()" class="text-xl font-bold tracking-tight flex items-center gap-2">
+            <a href="#" class="text-xl font-bold tracking-tight flex items-center gap-2">
                 <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
                 Lane Fielder
             </a>
@@ -115,8 +115,8 @@
             <!-- Right Side -->
             <div class="flex items-center gap-4 ml-auto h-full">
                 <div class="hidden md:flex ml-auto gap-8 text-sm font-medium text-muted">
-                    <a href="#work" onclick="closeModal()" class="hover:text-white transition-colors">Case Studies</a>
-                    <a href="#expertise" onclick="closeModal()" class="hover:text-white transition-colors">Expertise</a>
+                    <a href="#work" class="hover:text-white transition-colors">Case Studies</a>
+                    <a href="#expertise" class="hover:text-white transition-colors">Expertise</a>
                 </div>
                 <a href="mailto:lanefielder@gmail.com"
                     class="hidden md:block text-white px-4 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-all text-sm font-medium">Get
@@ -297,22 +297,7 @@
         </footer>
     </div>
 
-    <!-- CASE STUDY OVERLAY (Hidden by default) -->
-    <div id="case-study-modal" class="fixed inset-0 z-[100] bg-[#0f0f0f] hidden overflow-y-auto">
-        <div class="max-w-4xl mx-auto px-6 py-12">
-            <button onclick="closeModal()"
-                class="fixed top-6 right-6 z-50 p-3 bg-surface rounded-full border border-white/10 hover:bg-white/10 transition-colors group">
-                <i data-lucide="x" class="w-6 h-6 text-muted group-hover:text-white"></i>
-            </button>
-            <button onclick="closeModal()" class="mb-8 text-sm text-muted hover:text-white flex items-center gap-2">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Portfolio
-            </button>
-
-            <div id="modal-content" class="animate-in fade-in slide-in-from-bottom-8 duration-500">
-                <!-- Content injected here -->
-            </div>
-        </div>
-    </div>
+    <!-- Modal Removed -->
 
     <script>
         lucide.createIcons();
@@ -327,38 +312,7 @@
                 category: "Workflow Design / Service Design / Gen AI",
                 image: "../img/createticket-home.png", // Abstract structured tech
                 description: "Guiding customers to create accurate tickets using AI, reducing back-and-forth and reducing resolution time.",
-                fullContent: `
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">AI Ticket Guide</h1>
-                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
-                        <span>Type: <strong>Internal Tool</strong></span>
-                        <span>Focus: <strong>Workflow Efficiency</strong></span>
-                    </div>
-                    <img src="../img/create_ticket.png" class="w-full rounded-2xl mb-12 border border-white/10" />
-                    
-                    <div class="prose prose-invert prose-lg max-w-none">
-                        <h3 class="text-2xl font-bold text-white mb-4">The Problem</h3>
-                        <p class="text-muted mb-8">Design a natural-language-driven ticket creation experience that guides customers to accurately provide required details—such as classification and severity—reducing guesswork and improving ticket quality from the start.</p>
-                        
-                        <h3 class="text-2xl font-bold text-white mb-4">The Solution</h3>
-                        <p class="text-muted mb-8">The AI Ticket Guide uses real-time AI prompting to guide users through the right questions and structure. It detects missing details, recommends categorization, and ensures clarity before submission.</p>
-                        
-                        <div class="bg-surface p-8 rounded-xl border border-white/5 my-8">
-                            <h4 class="font-bold text-white mb-2">Key Impact</h4>
-                            <ul class="list-disc list-inside text-muted space-y-2">
-                                <li>Reduced back-and-forth communication</li>
-                                <li>Improved workflow efficiency for support teams</li>
-                                <li>Higher quality inputs and better data categorization</li>
-                                <li>More intuitive process for non-technical users</li>
-                            </ul>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Next Steps</h3>
-                        <ol class="list-disc list-inside text-muted space-y-2">
-                            <li>Usability test with users</li>
-                            <li>Allow users to opt-in to identify interest and get real-world feedback and analytics</li>
-                            <li>Rollout full version</li>
-                        </ol>
-                    </div>
-                `,
+                link: "work/ai-ticket-guide.html",
                 size: "large"
             },
             {
@@ -368,30 +322,7 @@
                 category: "Brand / Design Systems / Gen AI",
                 image: "../img/visual-home.png", // Abstract artistic/geometric
                 description: "Transforming brand guidelines into structured prompt formats and guardrails for generative systems.",
-                fullContent: `
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Visual Guidelines Made for AI</h1>
-                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
-                        <span>Type: <strong>Design System</strong></span>
-                        <span>Focus: <strong>Brand Consistency</strong></span>
-                    </div>
-                    <img src="../img/vs_guide2.png" class="w-full rounded-2xl mb-12 border border-white/10" />
-                    <div class="prose prose-invert prose-lg max-w-none">
-                        <h3 class="text-2xl font-bold text-white mb-4">Overview</h3>
-                        <p class="text-muted mb-6">This project operationalizes design principles for AI. We transformed traditional brand guidelines into a set of AI-ready visual rules used across multiple generative systems.</p>
-                        
-                        <h3 class="text-2xl font-bold text-white mb-4">Approach</h3>
-                        <p class="text-muted mb-6">The system translates look, feel, tone, and visual language into structured prompt formats and reference images. It acts as a guardrail to ensure consistency across concept art, marketing visuals, and UI mockups.</p>
-
-                         <div class="bg-surface p-8 rounded-xl border border-white/5 my-8">
-                            <h4 class="font-bold text-white mb-2">Outcomes</h4>
-                            <ul class="list-disc list-inside text-muted space-y-2">
-                                <li>Generates on-brand visuals quickly and reliably</li>
-                                <li>Significantly reduces revisions</li>
-                                <li>Reinforces cohesive storytelling across automated outputs</li>
-                            </ul>
-                        </div>
-                    </div>
-                `,
+                link: "work/visual-guidelines.html",
                 size: "tall"
             },
             {
@@ -401,34 +332,7 @@
                 category: "Service Design / Workflow / Enterprise Design / Gen AI",
                 image: "../img/sitUI-home.png", // Abstract data flow
                 description: "Accelerating problem-solving by surfacing context and recommending secure, compliant solutions.",
-                fullContent: `
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">AI Ticket Resolution</h1>
-                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
-                        <span>Type: <strong>Operations</strong></span>
-                        <span>Focus: <strong>Automation & Compliance</strong></span>
-                    </div>
-                    <img src="../img/sitUI.png" class="w-full rounded-2xl mb-12 border border-white/10" />
-                    <div class="prose prose-invert prose-lg max-w-none">
-                        <h3 class="text-2xl font-bold text-white mb-4">Approach</h3>
-                        <p class="text-muted mb-6">The AI Ticket Resolution tool accelerates problem-solving by giving employees immediate context, surfacing relevant historical data, and recommending secure and compliant solutions.</p>
-                        <p class="text-muted">The system understands user roles and permissions, ensuring responses adhere to security governance while reducing resolution time and improving accuracy.</p>
-                         <div class="bg-surface p-8 rounded-xl border border-white/5 my-8">
-                            <h4 class="font-bold text-white mb-2">Outcomes</h4>
-                            <ul class="list-disc list-inside text-muted space-y-2">
-                                <li>Improve response and resolution times</li>
-                                <li>Decrease onboarding time for new employees</li>
-                                <li>Recognize and capitalize on training opportunities</li>
-                            </ul>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Next Steps</h3>
-                        <ol class="list-disc list-inside text-muted space-y-2">
-                            <li>Demo POC to leaders and users</li>
-                            <li>Pilot beta version with ~10 users</li>
-                            <li>Rollout full version to all employees</li>
-                        </ol>
-
-                    </div>
-                `,
+                link: "work/ai-ticket-resolution.html",
                 size: "normal"
             },
             {
@@ -438,29 +342,7 @@
                 category: "Dev Tools / Design Ops / Enterprise",
                 image: "../img/mcp.png", // Abstract code/tech
                 description: "Standardizing UI component generation for AI-powered IDEs to prevent drift and maintain quality.",
-                fullContent: `
-                    <div class="prose prose-invert prose-lg max-w-none">
-                        <h3 class="text-2xl font-bold text-white mb-4">The Problem</h3>
-                        <p class="text-muted mb-8">As hundreds of developers began adopting AI-powered IDEs (like Kiro and Claude Desktop), we noticed a fragmentation issue. AI models were generating UI code that looked almost correct but often hallucinated utility classes, ignored accessibility attributes, or drifted from our established brand guidelines. We needed a way to force the AI to "think" in our specific design language.</p>
-                        
-                        <h3 class="text-2xl font-bold text-white mb-4">The Solution</h3>
-                        <p class="text-muted mb-8">The team utilized a standard Model Context Protocol (MCP) Server with a custom registry acting as a middleware between our Design System and the developers' AI tools.</p>
-                        <ul class="list-disc list-inside text-muted space-y-2">
-                            <li><b>Context Injection:</b> The server dynamically feeds the AI the exact schemas, props, and usage guidelines for our component library.</li>
-                            <li><b>Guardrails:</b> It enforces a strict "safe zone," ensuring the AI cannot invent non-existent tokens or deprecated patterns.</li>
-                            <li><b>Standardization:</b> Whether a junior dev or a senior architect prompts the AI, the output adheres to the same code structure and accessibility (WCAG) standards.</li>
-                        </ul>
-
-                        <div class="bg-surface p-8 rounded-xl border border-white/5 my-8">
-                            <h4 class="font-bold text-white mb-2">Key Impact</h4>
-                            <ul class="list-disc list-inside text-muted space-y-2">
-                                <li><b>Consistency:</b> Guaranteed brand alignment across hundreds of applications.</li>
-                                <li><b>Velocity:</b> Reduced code-review friction by ensuring AI-generated code is "pre-approved" regarding style and structure.</li>
-                                <li><b>Scalability:</b> Created a foundation that allows hundreds of developers to utilize GenAI without compromising on code quality or user experience.</li>
-                            </ul>
-                        </div>
-                    </div>
-                `,
+                link: "work/ui-mcp-server.html",
                 size: "normal"
             },
 
@@ -472,17 +354,7 @@
                 category: "Design Systems / Strategy",
                 image: "../img/visual-home.png", // Placeholder
                 description: "Establishing a unified design language across 20+ products to improve consistency and development speed.",
-                fullContent: `
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Enterprise Design System</h1>
-                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
-                        <span>Type: <strong>Strategy</strong></span>
-                        <span>Focus: <strong>Scalability</strong></span>
-                    </div>
-                    <img src="../img/vs_guide2.png" class="w-full rounded-2xl mb-12 border border-white/10" />
-                    <div class="prose prose-invert prose-lg max-w-none">
-                        <p class="text-muted">Placeholder content for Enterprise Design System case study.</p>
-                    </div>
-                `,
+                link: "#",
                 size: "normal"
             },
             {
@@ -492,17 +364,7 @@
                 category: "E-Commerce / UX Research",
                 image: "../img/sitUI-home.png", // Placeholder
                 description: "Revamping the checkout flow for a global retailer, resulting in a 15% increase in conversion.",
-                fullContent: `
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Global E-Commerce Redesign</h1>
-                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
-                        <span>Type: <strong>Product Design</strong></span>
-                        <span>Focus: <strong>Conversion</strong></span>
-                    </div>
-                    <img src="../img/sitUI.png" class="w-full rounded-2xl mb-12 border border-white/10" />
-                    <div class="prose prose-invert prose-lg max-w-none">
-                        <p class="text-muted">Placeholder content for Global E-Commerce Redesign case study.</p>
-                    </div>
-                `,
+                link: "#",
                 size: "normal"
             },
             {
@@ -512,17 +374,7 @@
                 category: "Mobile / Fintech",
                 image: "../img/createticket-home.png", // Placeholder
                 description: "Designing a secure and intuitive mobile banking experience for next-gen users.",
-                fullContent: `
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">Fintech Mobile App</h1>
-                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
-                        <span>Type: <strong>Mobile App</strong></span>
-                        <span>Focus: <strong>User Experience</strong></span>
-                    </div>
-                    <img src="../img/create_ticket.png" class="w-full rounded-2xl mb-12 border border-white/10" />
-                    <div class="prose prose-invert prose-lg max-w-none">
-                        <p class="text-muted">Placeholder content for Fintech Mobile App case study.</p>
-                    </div>
-                `,
+                link: "#",
                 size: "normal"
             },
             {
@@ -532,17 +384,7 @@
                 category: "B2B / Data Visualization",
                 image: "../img/mcp.png", // Placeholder
                 description: "Creating a customizable dashboard for enterprise clients to visualize complex datasets.",
-                fullContent: `
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6">SaaS Analytics Dashboard</h1>
-                    <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
-                        <span>Type: <strong>B2B SaaS</strong></span>
-                        <span>Focus: <strong>Data Viz</strong></span>
-                    </div>
-                    <img src="../img/mcp.png" class="w-full rounded-2xl mb-12 border border-white/10" />
-                    <div class="prose prose-invert prose-lg max-w-none">
-                        <p class="text-muted">Placeholder content for SaaS Analytics Dashboard case study.</p>
-                    </div>
-                `,
+                link: "#",
                 size: "normal"
             }
         ];
@@ -555,9 +397,9 @@
             const isLarge = study.size === 'large' ? 'md:col-span-2' : '';
             const isTall = study.size === 'tall' ? 'md:row-span-2' : '';
 
-            const card = document.createElement('div');
-            card.className = `group relative rounded-3xl overflow-hidden bg-surface border border-white/5 cursor-pointer fade-up ${isLarge} ${isTall}`;
-            card.onclick = () => openCaseStudy(study.id);
+            const card = document.createElement('a');
+            card.href = study.link; // Direct link
+            card.className = `group relative rounded-3xl overflow-hidden bg-surface border border-white/5 cursor-pointer fade-up ${isLarge} ${isTall} block`;
 
             card.innerHTML = `
                 <div class="absolute inset-0 bg-black/20 z-0"></div>
@@ -580,35 +422,7 @@
             }
         });
 
-        // --- MODAL LOGIC ---
-        function openCaseStudy(id) {
-            const study = caseStudies.find(s => s.id === id);
-            if (!study) return;
 
-            const modal = document.getElementById('case-study-modal');
-            const content = document.getElementById('modal-content');
-
-            // Populate content
-            content.innerHTML = study.fullContent;
-
-            // Re-create lucide icons inside the newly injected content (for the alert-triangle icon)
-            lucide.createIcons();
-
-            // Show modal
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-
-            // Basic animation reset
-            content.classList.remove('animate-in');
-            void content.offsetWidth; // trigger reflow
-            content.classList.add('animate-in');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('case-study-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
 
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu-overlay');
