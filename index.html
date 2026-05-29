@@ -204,22 +204,19 @@
                 </div>
             </div>
 
+            <!-- Featured Work -->
+            <div class="mb-10">
+                <div class="grid grid-cols-1 gap-6 auto-rows-[500px]" id="featured-grid">
+                    <!-- JS will inject featured card here -->
+                </div>
+            </div>
+
             <!-- AI Related Work -->
             <div class="mb-20">
                 <h3 class="text-xl font-semibold text-white mb-8 flex items-center gap-3">
                     <i data-lucide="bot" class="text-blue-400"></i> AI Related Work
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]" id="ai-work-grid">
-                    <!-- JS will inject cards here -->
-                </div>
-            </div>
-
-            <!-- UX Strategy Work -->
-            <div class="hidden">
-                <h3 class="text-xl font-semibold text-white mb-8 flex items-center gap-3">
-                    <i data-lucide="compass" class="text-purple-400"></i> UX Strategy Work
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]" id="ux-strategy-grid">
                     <!-- JS will inject cards here -->
                 </div>
             </div>
@@ -309,7 +306,7 @@
                 section: 'ai',
                 title: "AI Ticket Guide",
                 category: "Workflow Design / Service Design / Gen AI",
-                image: "../img/createticket-home.png", // Abstract structured tech
+                image: "img/createticket-home.png", // Abstract structured tech
                 description: "Guiding customers to create accurate tickets using AI, reducing back-and-forth and reducing resolution time.",
                 link: "work/ai-ticket-guide.html",
                 size: "large"
@@ -319,7 +316,7 @@
                 section: 'ai',
                 title: "Visual Guidelines for AI",
                 category: "Brand / Design Systems / Gen AI",
-                image: "../img/visual-home.png", // Abstract artistic/geometric
+                image: "img/visual-home.png", // Abstract artistic/geometric
                 description: "Transforming brand guidelines into structured prompt formats and guardrails for generative systems.",
                 link: "work/visual-guidelines.html",
                 size: "tall"
@@ -329,7 +326,7 @@
                 section: 'ai',
                 title: "AI Ticket Resolution",
                 category: "Service Design / Workflow / Enterprise Design / Gen AI",
-                image: "../img/sitUI-home.png", // Abstract data flow
+                image: "img/sitUI-home.png", // Abstract data flow
                 description: "Accelerating problem-solving by surfacing context and recommending secure, compliant solutions.",
                 link: "work/ai-ticket-resolution.html",
                 size: "normal"
@@ -339,66 +336,40 @@
                 section: 'ai',
                 title: "UI MCP Server",
                 category: "Dev Tools / Design Ops / Enterprise",
-                image: "../img/mcp.png", // Abstract code/tech
+                image: "img/mcp.png", // Abstract code/tech
                 description: "Standardizing UI component generation for AI-powered IDEs to prevent drift and maintain quality.",
                 link: "work/ui-mcp-server.html",
                 size: "normal"
             },
 
-            // --- UX STRATEGY WORK (Placeholders) ---
+            // --- FEATURED ---
             {
                 id: 5,
-                section: 'ux-strategy',
-                title: "Enterprise Design System",
-                category: "Design Systems / Strategy",
-                image: "../img/visual-home.png", // Placeholder
-                description: "Establishing a unified design language across 20+ products to improve consistency and development speed.",
-                link: "#",
-                size: "normal"
-            },
-            {
-                id: 6,
-                section: 'ux-strategy',
-                title: "Global E-Commerce Redesign",
-                category: "E-Commerce / UX Research",
-                image: "../img/sitUI-home.png", // Placeholder
-                description: "Revamping the checkout flow for a global retailer, resulting in a 15% increase in conversion.",
-                link: "#",
-                size: "normal"
-            },
-            {
-                id: 7,
-                section: 'ux-strategy',
-                title: "Fintech Mobile App",
-                category: "Mobile / Fintech",
-                image: "../img/createticket-home.png", // Placeholder
-                description: "Designing a secure and intuitive mobile banking experience for next-gen users.",
-                link: "#",
-                size: "normal"
-            },
-            {
-                id: 8,
-                section: 'ux-strategy',
-                title: "SaaS Analytics Dashboard",
-                category: "B2B / Data Visualization",
-                image: "../img/mcp.png", // Placeholder
-                description: "Creating a customizable dashboard for enterprise clients to visualize complex datasets.",
-                link: "#",
-                size: "normal"
+                section: 'featured',
+                title: "Rackspace Unified Marketplace",
+                category: "Commerce / Information Architecture",
+                image: "img/mp-hero.png",
+                description: "A self-service product catalog built into the customer portal — connecting cloud infrastructure, managed services, and professional services into one commerce system.",
+                link: "work/marketplace.html",
+                size: "featured"
             }
         ];
 
         // --- LOGIC: Render Cards ---
+        const featuredGrid = document.getElementById('featured-grid');
         const aiGrid = document.getElementById('ai-work-grid');
-        const uxGrid = document.getElementById('ux-strategy-grid');
 
         caseStudies.forEach(study => {
+            const isFeatured = study.size === 'featured';
             const isLarge = study.size === 'large' ? 'md:col-span-2' : '';
             const isTall = study.size === 'tall' ? 'md:row-span-2' : '';
 
             const card = document.createElement('a');
-            card.href = study.link; // Direct link
+            card.href = study.link;
             card.className = `group relative rounded-3xl overflow-hidden bg-surface border border-white/5 cursor-pointer fade-up ${isLarge} ${isTall} block`;
+
+            const titleSize = isFeatured ? 'text-3xl md:text-4xl' : 'text-2xl';
+            const descClamp = isFeatured ? 'line-clamp-2' : 'line-clamp-3';
 
             card.innerHTML = `
                 <div class="absolute inset-0 bg-black/20 z-0"></div>
@@ -408,16 +379,17 @@
                 <div class="absolute bottom-0 left-0 p-8 z-10 w-full bg-gradient-to-t from-black/90 to-transparent">
                     <div class="flex gap-2 mb-3">
                         <span class="px-3 py-1 text-xs uppercase tracking-wider font-semibold bg-blue-600 text-white rounded-full">${study.category.split('/')[0]}</span>
+                        ${isFeatured ? '<span class="px-3 py-1 text-xs uppercase tracking-wider font-semibold bg-white/10 text-white rounded-full">Featured</span>' : ''}
                     </div>
-                    <h3 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">${study.title}</h3>
-                    <p class="text-gray-300 text-sm line-clamp-3">${study.description}</p>
+                    <h3 class="${titleSize} font-bold mb-2 group-hover:text-blue-400 transition-colors">${study.title}</h3>
+                    <p class="text-gray-300 text-sm ${descClamp}">${study.description}</p>
                 </div>
             `;
 
-            if (study.section === 'ai') {
-                aiGrid.appendChild(card);
+            if (study.section === 'featured') {
+                featuredGrid.appendChild(card);
             } else {
-                uxGrid.appendChild(card);
+                aiGrid.appendChild(card);
             }
         });
 
