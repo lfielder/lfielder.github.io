@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJYX35B058"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-KJYX35B058');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Platform Modernization | Lane Fielder</title>
+    <meta name="description" content="Content Platform Modernization - Case Study by Lane Fielder">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Archivo', 'sans-serif'] },
+                    colors: {
+                        background: '#14213d',
+                        surface: '#0c1428',
+                        primary: '#fca311',
+                        muted: '#9aa3bd',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #14213d;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        body {
+            background-color: #14213d;
+            color: #ffffff;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-[#fca311] selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-[#14213d]/90 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center">
+            <a href="../index.html" class="flex items-center gap-2" style="font-size:12px; letter-spacing:0.14em; font-weight:600;">
+                <span style="width:9px; height:9px; border-radius:50%; background:#fca311; display:inline-block;"></span>
+                Lane Fielder
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-24 pb-20 px-[44px] max-w-[1180px] mx-auto fade-in">
+        <a href="../index.html"
+            class="inline-flex items-center gap-2 text-muted hover:text-white mb-8 transition-colors">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Portfolio
+        </a>
+
+        <!-- Content -->
+
+        <div class="prose prose-invert prose-lg max-w-none">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Content Platform Modernization</h1>
+            <div class="flex gap-4 mb-8 text-sm text-muted border-b border-white/10 pb-8">
+                <span>Type: <strong>Content Strategy / Product Management</strong></span>
+                <span>Focus: <strong>Governance & Cost Sustainability</strong></span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                <div>
+                    <div class="w-full aspect-[4/3] rounded-2xl border border-white/10 overflow-hidden bg-black">
+                        <img src="../img/docs_home.957c95c2.png" class="w-full h-full object-cover object-top"
+                            alt="The legacy documentation platform before modernization" />
+                    </div>
+                    <p class="text-xs text-muted mt-3 uppercase tracking-wider font-semibold">Before: Legacy self-hosted platform</p>
+                </div>
+                <div>
+                    <div class="w-full aspect-[4/3] rounded-2xl border border-white/10 overflow-hidden bg-black">
+                        <img src="../img/new-docs.png" class="w-full h-full object-cover object-top"
+                            alt="The current readme.io documentation platform after modernization" />
+                    </div>
+                    <p class="text-xs text-muted mt-3 uppercase tracking-wider font-semibold">After: readme.io</p>
+                </div>
+            </div>
+            <p class="text-xs text-muted mb-12">Same content mission, rebuilt on a platform two non-technical writers
+                run independently.</p>
+
+            <h3 class="text-2xl font-bold text-white mb-4">The Problem</h3>
+            <p class="text-muted mb-8">Rackspace's documentation platform ran on a self-hosted stack (GitHub, Netlify,
+                and Jekyll) that required GitHub proficiency to update, a hard barrier for non-technical writers. Over
+                time it became a dumping ground: internal docs, API references, and even Marketing's company blog were
+                all shoe-horned in because it was the only system available, not because it served any of those content
+                types well. It cost roughly $200K a year to operate and needed a 12-person team of writers and content
+                strategists to run. When company downsizing eliminated that team, I inherited the platform with 2
+                non-technical writers and an immediate constraint: whatever came next had to work for them on day one.</p>
+
+            <h3 class="text-2xl font-bold text-white mb-4">The Solution</h3>
+            <p class="text-muted mb-8">Fixed the content before choosing a platform. Migrating to a new tool without
+                fixing the underlying content strategy would have counted as failure, even if the tool worked well.</p>
+            <ul class="list-disc list-inside text-muted space-y-2">
+                <li><b>Content strategy first:</b> Eliminated stale content, then defined a simple ownership test,
+                    what should Rackspace actually own versus what already exists elsewhere on the internet, so
+                    non-expert writers could make keep/cut calls without subject-matter expertise. Cut the library
+                    from 15,000 to 8,000 pieces before evaluating a single platform.</li>
+                <li><b>Platform selection second:</b> Trialed three CMS platforms and selected readme.io for its
+                    simple interface, built-in markdown support (a direct migration path from the existing files),
+                    and robust API documentation.</li>
+                <li><b>Governance:</b> Assigned responsible owners per content section, and partnered with Marketing
+                    to move their company blog onto the corporate .com site so they could own and publish their own
+                    content directly, instead of routing through a docs platform and team with no stake in it.</li>
+            </ul>
+
+            <div class="bg-surface p-8 rounded-xl border border-white/5 my-8">
+                <h4 class="font-bold text-white mb-2">Key Impact</h4>
+                <ul class="list-disc list-inside text-muted space-y-2">
+                    <li><b>Cost:</b> Reduced platform operating cost from roughly $200K/year to under $2K/year, a
+                        ~99% reduction.</li>
+                    <li><b>Sustainability:</b> Replaced a 12-person specialist team with 2 non-technical writers who
+                        operate the platform independently today.</li>
+                    <li><b>Quality:</b> Cut the content library nearly in half by applying a differentiator-based
+                        ownership test, not an arbitrary reduction.</li>
+                    <li><b>Ongoing ownership:</b> Continue to own the platform, its content model, and its vendor
+                        relationship today, including investment planning across the broader docs, analytics, and
+                        design vendor portfolio.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-white/5 text-center">
+        <div class="text-xs text-gray-600">&copy; 2026 Lane Fielder.</div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
