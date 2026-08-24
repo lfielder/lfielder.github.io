@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KJYX35B058"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-KJYX35B058');
+</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How I Think About Product Work | Lane Fielder</title>
+<meta name="description" content="Five principles for product development and experience design, each demonstrated with a real example from Lane Fielder's work." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --black: #000000;
+    --prussian-blue: #14213d;
+    --orange: #fca311;
+    --alabaster: #e5e5e5;
+    --white: #ffffff;
+    --hairline: rgba(229, 229, 229, 0.18);
+    --muted: rgba(229, 229, 229, 0.6);
+    --muted-strong: rgba(229, 229, 229, 0.72);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--prussian-blue);
+    color: var(--alabaster);
+    font-family: Archivo, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--alabaster); text-decoration: none; }
+  a:hover { color: var(--orange); }
+  ::selection { background: var(--orange); color: var(--prussian-blue); }
+  p { text-wrap: pretty; }
+
+  .site { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  .brand { display: flex; align-items: center; gap: 9px; font-size: 12px; letter-spacing: 0.14em; font-weight: 600; }
+  .brand span.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--orange); }
+  nav.top { position: fixed; width: 100%; top: 0; z-index: 50; background: rgba(20,33,61,0.9); backdrop-filter: blur(10px); }
+  nav.top .inner { max-width: 1180px; margin: 0 auto; padding: 0 44px; height: 64px; display: flex; align-items: center; }
+
+  /* header */
+  .page-head { padding: 140px 0 64px; }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 0.05em; font-weight: 600; color: var(--muted-strong); margin-bottom: 28px; }
+  .back-link:hover { color: var(--orange); }
+  .page-title { margin: 0 0 20px; font-size: 44px; line-height: 1.05; letter-spacing: -0.03em; font-weight: 700; color: var(--white); }
+  .page-lede { margin: 0; font-size: 17px; line-height: 1.6; color: var(--muted-strong); }
+
+  /* accordion */
+  .principles-list { display: flex; flex-direction: column; gap: 18px; padding-bottom: 120px; }
+  .principle {
+    border: 1px solid var(--hairline); border-radius: 18px; overflow: hidden; background: rgba(0,0,0,0.18);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .principle:has(.principle-toggle:hover) { border-color: var(--orange); box-shadow: 0 0 0 1px var(--orange); }
+  .principle-header {
+    display: flex; align-items: flex-start; gap: 20px;
+    width: 100%; padding: 30px 32px;
+  }
+  .principle-num { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--orange); flex-shrink: 0; padding-top: 5px; width: 22px; }
+  .principle-headline { flex: 1; }
+  .principle-title { display: block; font-size: 21px; font-weight: 700; color: var(--white); margin: 0 0 14px; letter-spacing: -0.01em; transition: color 0.2s ease; }
+  .principle:has(.principle-toggle:hover) .principle-title { color: var(--orange); }
+  .principle-intro { display: block; font-size: 15px; line-height: 1.65; color: var(--muted-strong); margin: 0; }
+  .principle-toggle {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center;
+    color: var(--orange); background: none; cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    margin-top: 2px; padding: 0;
+  }
+  .principle-toggle:hover { background: var(--orange); border-color: var(--orange); }
+  .principle-toggle:hover .caret { border-color: var(--prussian-blue); }
+  .principle-toggle:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .caret {
+    width: 8px; height: 8px;
+    border-right: 2px solid var(--orange); border-bottom: 2px solid var(--orange);
+    transform: rotate(45deg); margin-top: -4px;
+    transition: transform 0.25s ease, border-color 0.2s ease;
+  }
+  .principle.open .caret { transform: rotate(-135deg); margin-top: 2px; }
+  .principle-hint {
+    display: block; margin-top: 14px; font-size: 11px; letter-spacing: 0.08em; font-weight: 600;
+    color: var(--muted); opacity: 0; transition: opacity 0.2s ease;
+  }
+  .principle:has(.principle-toggle:hover) .principle-hint { opacity: 1; color: var(--orange); }
+  .principle.open .principle-hint { display: none; }
+  .principle-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .principle-body-inner { padding: 0 32px 32px 74px; }
+  .principle-body p { font-size: 15px; line-height: 1.75; color: var(--muted-strong); margin: 0 0 16px; }
+  .principle-body p:last-child { margin-bottom: 0; }
+  .principle.open .principle-body { max-height: 1200px; }
+
+  @media (max-width: 640px) {
+    .page-title { font-size: 32px; }
+    .principle-header { padding: 24px 20px; gap: 14px; }
+    .principle-body-inner { padding: 0 20px 28px 42px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a href="../index.html" class="brand"><span class="dot"></span><span>Lane Fielder</span></a>
+  </div>
+</nav>
+
+<div class="site">
+  <div class="page-head">
+    <a class="back-link" href="../index.html">&#8592; Back to portfolio</a>
+    <h1 class="page-title">How I Think About Product Development and Experience Design</h1>
+    <p class="page-lede">Five principles, each demonstrated by something I've actually done, not just believe in. Click any principle to see the real example behind it.</p>
+  </div>
+
+  <div class="principles-list">
+    <div class="principle">
+      <div class="principle-header">
+        <span class="principle-num">01</span>
+        <span class="principle-headline">
+          <span class="principle-title">Find the real problem, not the one you were handed</span>
+          <span class="principle-intro">When the business comes with a solution, it's usually someone's best guess at the problem. It's a starting point, not the real thing. The real problem is usually one level deeper. You find it by getting close to the people doing the work.</span>
+        <span class="principle-hint">See the real example &#8594;</span>
+        </span>
+        <button class="principle-toggle" onclick="togglePrinciple(this)" aria-expanded="false" aria-label="Expand principle">
+          <span class="caret"></span>
+        </button>
+      </div>
+      <div class="principle-body">
+        <div class="principle-body-inner">
+          <p>Early in my time at Rackspace, I worked directly with customers. Later I trained and worked alongside the employees who support them. That taught me how critical it is to stay close to where the problems actually are. Real improvement comes from understanding the systems, the workflows, and the customer experience firsthand. Even after moving from support to product, I kept that habit. I shadowed agents, ran interviews, and sat in on the unglamorous parts of the job. Nobody assigned that to me. I did it because that's where the actual friction lives.</p>
+          <p>That habit shaped how my product ownership grew over time. The business proposed a solution: a simpler verification process for customers calling in. We did the work first and mapped the full process. The real issue wasn't verification. It was customer identification, the step before verification could even happen. So we proposed something bigger: a global customer search. It expanded to cover customer verification, interaction logging, and transfer tracking. When we presented the plan to leadership, they were surprised. They hadn't realized how dysfunctional the full workflow actually was.</p>
+          <p>That instinct still shapes how I evaluate any new initiative. Before I accept the stated solution, I find out what the people closest to it actually experience day to day. Most of the time, the real problem is more specific, and more solvable, than the solution that was proposed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-header">
+        <span class="principle-num">02</span>
+        <span class="principle-headline">
+          <span class="principle-title">Define success criteria before you build anything</span>
+          <span class="principle-intro">If you don't decide what success looks like in advance, you'll retrofit a definition after the fact. That definition will usually make whatever happened look like a win. Defining success means two things: the criteria, and how you'll measure them. Start with a baseline. Then measure the same way all the way through. Otherwise you're comparing two metrics that were never really comparable in the first place.</span>
+        <span class="principle-hint">See the real example &#8594;</span>
+        </span>
+        <button class="principle-toggle" onclick="togglePrinciple(this)" aria-expanded="false" aria-label="Expand principle">
+          <span class="caret"></span>
+        </button>
+      </div>
+      <div class="principle-body">
+        <div class="principle-body-inner">
+          <p>Rackspace wanted to bring AI into everyday workflows, but there was no consistent way to evaluate what was worth productionizing. Before piloting anything, we defined success metrics and evaluation criteria for each pilot, including the baseline each pilot was actually being measured against. I sat on the governance committee that decided which concepts graduated to production. We piloted four AI solutions. Three shipped, for legal, sales, and HR use cases. The fourth didn't meet the bar we'd set, so it was retired. That wasn't a failure. It was the process working exactly as designed. We'd decided the bar, and how we'd measure against it, before we started. That's what made killing a pilot an acceptable outcome instead of an admission of defeat.</p>
+          <p>The same discipline shaped the company's first structured experimentation practice. We launched Rackspace's first A/B testing program. We built a standardized content and experience metrics framework alongside it, paired with a standing research practice of regular usability sessions. Product decisions got made on evidence, not on whoever argued most confidently in the room. The whole point of an A/B test is measuring test and control the same way, under the same conditions. That's what makes the comparison actually mean something.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-header">
+        <span class="principle-num">03</span>
+        <span class="principle-headline">
+          <span class="principle-title">Define your north star, and build toward it in phases, measuring all the way</span>
+          <span class="principle-intro">A north star is what you're actually building toward. Phases are how you get there from where you are today. This enables you to show incremental business value rather than one big-bang solution that can take years before the business sees any value. A clear north star does two things. It gives leadership a clear picture of the goal. And it gets every stakeholder aligned on the direction.</span>
+        <span class="principle-hint">See the real example &#8594;</span>
+        </span>
+        <button class="principle-toggle" onclick="togglePrinciple(this)" aria-expanded="false" aria-label="Expand principle">
+          <span class="caret"></span>
+        </button>
+      </div>
+      <div class="principle-body">
+        <div class="principle-body-inner">
+          <p>We took ownership of Rackspace's documentation platform right after it lost its twelve-person team. It was a legacy, self-hosted system. The north star was clear: a platform both non-technical and technical content creators could run independently, sustainably, for the long term. We didn't start with a platform migration. The first phase was fixing the content itself. We eliminated stale material and applied a simple ownership test: what should Rackspace provide and maintain for our customers, versus what is outside of our scope and resource capacity? That test let writers make most of the keep-or-cut calls without needing subject-matter expertise. For any questions, we engaged the SMEs and gave them a simple article list so their job was as easy as possible. This also helped establish that going forward, they would own the content with our support.</p>
+          <p>This phase alone took the library from 15,000 pieces to 8,000. It delivered real value before we even looked at a new platform. Only then did we trial three CMS platforms and migrate to readme.io. The business saw the content problem improving in weeks, not after a migration that would have taken months to plan and execute.</p>
+          <p>We're using the same phased instinct with the AI Ticket Guide, an AI-guided intake experience that can replace static support forms. Instead of one big-bang launch, we're rolling it out in three phases: validation, an opt-in beta, and full deployment. We've completed validation and are currently piloting the beta. Each phase improves intake quality and surfaces edge cases before the next phase scales it further. Every phase is measured against the same north star: better first-touch ticket quality, not just shipped and left alone.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-header">
+        <span class="principle-num">04</span>
+        <span class="principle-headline">
+          <span class="principle-title">Build guardrails, not gatekeepers</span>
+          <span class="principle-intro">Quality that depends on a human catching every mistake doesn't scale. Quality enforced automatically, before the mistake ever reaches a person, does. That's the difference between building a guardrail and just adding another reviewer.</span>
+        <span class="principle-hint">See the real example &#8594;</span>
+        </span>
+        <button class="principle-toggle" onclick="togglePrinciple(this)" aria-expanded="false" aria-label="Expand principle">
+          <span class="caret"></span>
+        </button>
+      </div>
+      <div class="principle-body">
+        <div class="principle-body-inner">
+          <p>We built a schema registry, served through a Model Context Protocol server. It governs component and content structure the moment AI generates it. Validated schemas, accessibility rules, and brand guidance are enforced automatically. AI-assisted and human-authored output stays consistent before it ever reaches a review queue. We applied the same logic to visual and brand content. We translated brand guidelines into structured prompt frameworks and guardrails, instead of a static brand book someone has to remember to consult.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-header">
+        <span class="principle-num">05</span>
+        <span class="principle-headline">
+          <span class="principle-title">Design for who inherits it, not who launches it</span>
+          <span class="principle-intro">Launch day only proves something works today. The real test comes a year later, after the attention has moved on, or when someone else has to run it.</span>
+        <span class="principle-hint">See the real example &#8594;</span>
+        </span>
+        <button class="principle-toggle" onclick="togglePrinciple(this)" aria-expanded="false" aria-label="Expand principle">
+          <span class="caret"></span>
+        </button>
+      </div>
+      <div class="principle-body">
+        <div class="principle-body-inner">
+          <p>The clearest example is the documentation platform again. We didn't just migrate it and walk away. The end state was two non-technical writers operating it independently. Ownership was assigned per content section, so accountability didn't depend on anyone's technical access. We also noticed the platform was hosting content it had no business hosting. Marketing's company blog had ended up there simply because it was the only system available. We partnered with Marketing to move it to the corporate site, so they could own and publish their own content directly instead of routing through a team with no stake in it. Returning that ownership to the right people was as much a part of finishing the project as the migration itself.</p>
+          <p>That's the standard I hold any handoff to: not "does it work when I'm still here," but "does it work when I'm not."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePrinciple(headerEl) {
+    const item = headerEl.closest('.principle');
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open', !isOpen);
+    headerEl.setAttribute('aria-expanded', String(!isOpen));
+  }
+</script>
+
+</body>
+</html>
